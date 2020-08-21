@@ -1,0 +1,67 @@
+<div class="wrapperProf">
+    <div class="containerProf"> 
+        <div class="headerProf">
+            <div class="logoProf">
+                <a href="/"><img src="/images/logoelbrus.svg" alt=""></a>
+            </div>
+            <div class="navProf">
+                 {{#if auth}}
+                    <div class="inProf">
+                        <a class="link_navProf" href="/user/{{_id}}">{{username}}</a>
+                    </div>
+                    <div class="outProf">
+                        <a class="link_navProf" href="/login/exit">Выйти</a>
+                    </div>
+                {{/if}}
+                {{#unless auth}}
+                     <div class="loginProf">
+                        <a class="link_navProf" href="/login">Войти</a>
+                    </div>
+                    <div class="regProf">
+                        <a class="link_navProf" href="/registr">Регистрация</a>
+                    </div>
+                {{/unless}}
+            </div>
+        </div>
+        <div class="wrapProfMain">
+            <div class="avatarProf">
+                <div class="photoAvatar">
+                    <img src="/avatar/{{this.avatar}}" width="200" alt=""/>
+                     {{#if allowEdit}}
+                    <button class="btnChangeAvatar"><a href="changeAvt/{{_id}}">Изменить фото</a></button>
+                    {{/if}}
+                </div>
+                 <a href="{{gitHub_link}}"><img src="/images/GitHub-Logo.png" style="width: 40%; margin-top:15%; margin-left:15% " > </a>
+                 <a href="{{linkedin_link}}"><img src="/images/linkedin-logo.png" style="width: 30%; margin-top:10%; margin-left:20% " > </a>
+            </div>
+            <div class="rightBlockProf">
+                <div class="nameBlock">
+                    <div class="nameProf">{{name}} {{surname}}</div>
+                    {{#if allowEdit}}
+                    <button class="btnChangeProf"><a href="change/{{_id}}">Редактировать</a></button>
+                     {{/if}}
+                </div>
+                <div class="cityProf">{{location}}</div>
+                <div class="wrapAboutUser">
+                    <div class="lable_aboutUser">Обо мне:</div>
+                    <div class="about_userProf">{{about_user}}</div>
+                </div>
+                <div class="wrapSkills">
+                    <div class="lable_skills">Навыки работы с:</div>
+                    <div class="skillsProf">{{skills}}</div>
+                </div>
+                <div class="wrapProject">
+                    <div class="lable_project">Проекты:</div>
+                <div class="projectProf">{{projects}}</div>
+                </div>
+                <div class="emailProf"><strong>E-mail:</strong> {{email}}</div>
+                <div class="phoneProf"><strong>Phone:</strong> {{phone}}</div>
+            </div>
+        </div>
+        <div class="footerProf">
+         <div class="adres">Москва, м.Ленинский проспект, ул.Вавилова</div>
+    </div>
+    </div>
+    
+</div>
+ 
